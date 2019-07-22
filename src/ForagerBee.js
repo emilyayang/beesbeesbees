@@ -9,13 +9,15 @@ var ForagerBee = function(color, food) {
     this.treasureChest = [];
 };
 
-ForagerBee.prototype.eat = function(eat) {
-    Grub.call(this, eat);
- }
+ ForagerBee.prototype = Object.create(Grub.prototype);// re-define child prototype to Parent prototype
+ ForagerBee.prototype.constructor = ForagerBee;// return original constructor to Child
+
 
 ForagerBee.prototype.forage = function(treasure) {
     this.treasureChest.push(treasure);
  }
+
+
 
 
  // Create a ForagerBee class, in pseudoclassical style, with:

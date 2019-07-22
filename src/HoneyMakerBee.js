@@ -8,9 +8,8 @@ var HoneyMakerBee = function(color, food) {
 
 };
 
- HoneyMakerBee.prototype.eat = function(eat) {
-    Grub.call(this, eat);
- }
+ HoneyMakerBee.prototype = Object.create(Grub.prototype);// re-define child prototype to Parent prototype
+ HoneyMakerBee.prototype.constructor = HoneyMakerBee;// return original constructor to Child
 
   HoneyMakerBee.prototype.makeHoney = function() {
 	this.honeyPot++;
@@ -19,6 +18,8 @@ var HoneyMakerBee = function(color, food) {
   HoneyMakerBee.prototype.giveHoney = function() {
 	this.honeyPot--;
  }
+
+
 
 // Create a HoneyMakerBee class, in pseudoclassical style, with:
  // call the Bee superclass

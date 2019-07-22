@@ -9,9 +9,9 @@ var RetiredForagerBee = function(treasureChest, food) {
     // this.treasureChest = [];
 };
 
-RetiredForagerBee.prototype.eat = function(eat) {
-    Grub.call(this, eat);
-}
+ RetiredForagerBee.prototype = Object.create(Grub.prototype);// re-define child prototype to Parent prototype
+ RetiredForagerBee.prototype.constructor = RetiredForagerBee;// return original constructor to Child
+
 
 RetiredForagerBee.prototype.forage = function(treasure) {
     return "I am too old, let me play cards instead";

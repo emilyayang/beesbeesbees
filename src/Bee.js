@@ -6,10 +6,9 @@ var Bee = function(food) {
 };
 
 
- Bee.prototype.eat = function(eat) {
-    Grub.call(this, eat);
+ Bee.prototype = Object.create(Grub.prototype);// re-define child prototype to Parent prototype
+ Bee.prototype.constructor = Bee;// return original constructor to Child
 
- }
  // call the Grub superclass
  // set the prototype
  // set the constructor
@@ -18,3 +17,4 @@ var Bee = function(food) {
  // a food property that is inherited from grub
  // an eat method that is inherited from grub
  // a job property that is set to keep on growing
+
